@@ -13,6 +13,17 @@ body {
   margin: 0;
 }
 
+.buttons {
+  margin-bottom: 30px;
+}
+
+.alert-log {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-top: 30px;
+}
+
 #canvas {
   background: #f0f0f0;
   border-radius: 5px;

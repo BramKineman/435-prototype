@@ -11,17 +11,25 @@ const car = {
   w: 70,
   h: 50,
   x: 20,
-  y: 400,
+  y: 200,
   speed: 2,
 };
 
 function drawRoad() {
   ctx.fillstyle = 'black';
-  ctx.fillRect(0, canvas.height/2, canvas.width, 200);
+  ctx.fillRect(0, canvas.height/2 -100, canvas.width, 200);
+
 }
 
 function drawCar() {
   ctx.drawImage(image, car.x, car.y, car.w, car.h);
+}
+
+function addPedestrianButton () {
+  const button = document.createElement('button');
+  button.innerText = 'Add Pedestrian';
+  button.addEventListener('click', addPedestrian);
+  document.body.appendChild(button);
 }
 
 function update() {
