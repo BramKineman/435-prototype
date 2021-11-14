@@ -24,7 +24,8 @@ const pedestrian = {
   w: 50,
   h: 50,
   x: 800,
-  y: 300
+  y: 300, 
+  speed: 0
 };
 
 function drawRoad() {
@@ -55,6 +56,16 @@ function displayStaticPedestrian() {
   drawPedestrian();
 }
 
+function displaySlowPedestrian() {
+  drawPedestrian();
+  pedestrian.speed = 0.5;
+}
+
+function displayFastPedestrian() {
+  drawPedestrian();
+  pedestrian.speed = 1;
+}
+
 function start() {
   function update() {
     // redraw for animation
@@ -66,6 +77,7 @@ function start() {
 
     // change car position
     car.x += car.speed;
+    pedestrian.x += pedestrian.speed;
     
     requestAnimationFrame(update);
   }
