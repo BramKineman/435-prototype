@@ -5,7 +5,8 @@ const ctx = canvas.getContext('2d');
 
 // Car Animation 
 
-const image = document.getElementById('car-source');
+const carImage = document.getElementById('car-source');
+const staticPedestrianImage = document.getElementById('pedestrian-source');
 
 const car = {
   w: 70,
@@ -15,6 +16,13 @@ const car = {
   speed: 2,
 };
 
+const pedestrian = {
+  w: 50,
+  h: 50,
+  x: 800,
+  y: 300
+};
+
 function drawRoad() {
   ctx.fillstyle = 'black';
   ctx.fillRect(0, canvas.height/2 -100, canvas.width, 200);
@@ -22,8 +30,13 @@ function drawRoad() {
 }
 
 function drawCar() {
-  ctx.drawImage(image, car.x, car.y, car.w, car.h);
+  ctx.drawImage(carImage, car.x, car.y, car.w, car.h);
 }
+
+function drawPedestrian() {
+  ctx.drawImage(staticPedestrianImage, pedestrian.x, pedestrian.y, pedestrian.w, pedestrian.h);
+}
+
 
 function addPedestrianButton () {
   const button = document.createElement('button');
@@ -37,6 +50,7 @@ function update() {
 
   drawRoad();
   drawCar();
+  drawPedestrian();
 
   // change car position
   car.x += car.speed;
