@@ -15,13 +15,13 @@
 
       <div class="buttons">
         <button onclick="displayFastCar()">Add Fast Car</button>
-        <button>Add Slow Car</button>
+        <button onclick="displaySlowCar()">Add Slow Car</button>
         <button onclick="displayStaticPedestrian()">Add Static Pedestrian</button>
         <button>Add Fast Moving Pedestrian</button>
         <button>Add Slow Moving Pedestrian</button>
       </div>
 
-      <button style="margin-bottom: 20px;" onclick="start()">Start Simulation</button>
+      <button style="margin-bottom: 20px; background-color: green;" onclick="start()">Start Simulation</button>
       <canvas id="canvas" width="1200" height="400"></canvas>
 
       <img src="/images/car.png" alt="car" id="car-source">

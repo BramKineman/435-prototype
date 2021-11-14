@@ -44,14 +44,20 @@ function drawPedestrian() {
 
 function displayFastCar() {
   drawCar();
+  car.speed = 2;
 }
 
+function displaySlowCar() {
+  drawCar();
+  car.speed = 1;
+} 
 function displayStaticPedestrian() {
   drawPedestrian();
 }
 
 function start() {
   function update() {
+    // redraw for animation
     ctx.clearRect(0,0,canvas.width, canvas.height);
 
     drawRoad();
