@@ -13,11 +13,16 @@
     <body>
       <h1 style="text-align: center; margin-bottom: 20px;">Prototype</h1>
 
-
       <div class="buttons">
+        <button>Add Fast Car</button>
+        <button>Add Slow Car</button>
         <button>Add Static Pedestrian</button>
-        <button>Add Moving Pedestrian</button>
+        <button>Add Fast Moving Pedestrian</button>
+        <button>Add Slow Moving Pedestrian</button>
+
       </div>
+
+      <button style="margin-bottom: 20px;">Start Simulation</button>
       <canvas id="canvas" width="1200" height="400"></canvas>
 
       <img src="/images/car.png" alt="car" id="car-source">
@@ -26,6 +31,13 @@
       <script src="script.js"></script>
       <div class="alert-log">
         <h3>Alert Log</h3>
+      </div>
+
+      <div class="subsystems">
+        <h3><u>Subsystems</u></h3>
+        <p><b>PCAS</b>: active/inactive</p>
+        <p><b>Brake-by-wire</b>: active/inactive</p>
+        <p><b>Driver HUD</b>: active/inactive</p>
       </div>
       
     </body>
