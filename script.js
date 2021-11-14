@@ -8,12 +8,16 @@ const ctx = canvas.getContext('2d');
 const carImage = document.getElementById('car-source');
 const staticPedestrianImage = document.getElementById('pedestrian-source');
 
+
+
+drawRoad();
+
 const car = {
   w: 70,
   h: 50,
   x: 20,
   y: 200,
-  speed: 2,
+  speed: 1,
 };
 
 const pedestrian = {
@@ -38,24 +42,30 @@ function drawPedestrian() {
 }
 
 
-function addPedestrianButton () {
-  const button = document.createElement('button');
-  button.innerText = 'Add Pedestrian';
-  button.addEventListener('click', addPedestrian);
-  document.body.appendChild(button);
-}
-
-function update() {
-  ctx.clearRect(0,0,canvas.width, canvas.height);
-
-  drawRoad();
+function displayFastCar() {
   drawCar();
-  drawPedestrian();
-
-  // change car position
-  car.x += car.speed;
-  
-  requestAnimationFrame(update);
 }
 
-update();
+function displayStaticPedestrian() {
+  drawPedestrian();
+}
+
+function start() {
+  function update() {
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+
+    drawRoad();
+    drawCar();
+    drawPedestrian();
+
+    // change car position
+    car.x += car.speed;
+    
+    requestAnimationFrame(update);
+  }
+
+  update();
+
+}
+
+

@@ -14,15 +14,14 @@
       <h1 style="text-align: center; margin-bottom: 20px;">Prototype</h1>
 
       <div class="buttons">
-        <button>Add Fast Car</button>
+        <button onclick="displayFastCar()">Add Fast Car</button>
         <button>Add Slow Car</button>
-        <button>Add Static Pedestrian</button>
+        <button onclick="displayStaticPedestrian()">Add Static Pedestrian</button>
         <button>Add Fast Moving Pedestrian</button>
         <button>Add Slow Moving Pedestrian</button>
-
       </div>
 
-      <button style="margin-bottom: 20px;">Start Simulation</button>
+      <button style="margin-bottom: 20px;" onclick="start()">Start Simulation</button>
       <canvas id="canvas" width="1200" height="400"></canvas>
 
       <img src="/images/car.png" alt="car" id="car-source">
