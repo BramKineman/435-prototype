@@ -77,7 +77,7 @@ function start() {
 
     // change car position
     car.x += car.speed;
-    pedestrian.y += pedestrian.speed;
+    pedestrian.y -= pedestrian.speed;
     
     requestAnimationFrame(update);
   }
