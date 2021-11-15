@@ -58,12 +58,12 @@ function displayStaticPedestrian() {
 
 function displaySlowPedestrian() {
   drawPedestrian();
-  pedestrian.speed = 0.5;
+  pedestrian.speed = 0.05;
 }
 
 function displayFastPedestrian() {
   drawPedestrian();
-  pedestrian.speed = 1;
+  pedestrian.speed = 0.2;
 }
 
 function start() {
