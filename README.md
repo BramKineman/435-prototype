@@ -1,7 +1,10 @@
 # 435-prototype
 
-deploys here: https://app.netlify.com/sites/distracted-benz-5b1790/overview
+Instructions:
+Add a vehicle of your preferred speed (slow or fast) along with a pedestrian (static, slow, or fast) and click Start Simulation to see how the subsystems interact with the input. To create a different scenario, click Restart and make new selections for your vehicle and pedestrian before clicking Start Simulation again.
 
-sources: 
+Deployment: https://app.netlify.com/sites/distracted-benz-5b1790/overview
+
+Sources: 
 - https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 - https://www.youtube.com/watch?v=gm1QtePAYTM&t=2440s
