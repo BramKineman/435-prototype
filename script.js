@@ -24,7 +24,7 @@ const pedestrian = {
   y: 300, 
   speed: 0.21,
   limitY: 100, // pixel height of where pedestrian stops
-  delay: 0 // delay in seconds before pedestrian starts. I am calculating this based on the location of the car. ie. Car takes 3 seconds to travel 780 pixels, so if delay is 1.5 seconds, set delay to 390 pixels --> if(car.x > delay) { pedestrian moves}
+  delay: 0 // delay before pedestrian starts. I am calculating this based on the location of the car. ie. Car takes 3 seconds to travel 780 pixels, so if delay is 1.5 seconds, set delay to 390 pixels --> if(car.x > delay) { pedestrian moves}
 };
 
 function drawRoad() {
