@@ -25,7 +25,8 @@ const pedestrian = {
   h: 50,
   x: 800,
   y: 300, 
-  speed: 0
+  speed: 0,
+  limit: 100 // pixel height of where pedestrian stops
 };
 
 function drawRoad() {
@@ -66,6 +67,41 @@ function displayFastPedestrian() {
   pedestrian.speed = 0.2;
 }
 
+function scenarioOne() {
+  drawPedestrian();
+  pedestrian.speed = 0.05;
+  pedestrian.limit = 100; 
+
+}
+
+function scenarioTwo() {
+
+}
+function scenarioThree() {
+
+}
+function scenarioFour() {
+
+}
+function scenarioFive() {
+
+}
+function scenarioSix() {
+
+}
+function scenarioSeven() {
+
+}
+function scenarioEight() {
+
+}
+function scenarioNine() {
+
+}
+function scenarioTen() {
+
+}
+
 function start() {
   function update() {
     // redraw for animation
@@ -75,9 +111,15 @@ function start() {
     drawCar();
     drawPedestrian();
 
+    // stop the pedestrian TODO Issue with this, pedestrian just isn't moving?
+    if (pedestrian.y < limit) {
+      pedestrian.speed = 0;
+    }
+
     // change car position
     car.x += car.speed;
     pedestrian.y -= pedestrian.speed;
+
     
     requestAnimationFrame(update);
   }

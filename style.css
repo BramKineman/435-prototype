@@ -13,9 +13,14 @@ body {
   margin: 0;
 }
 
-.buttons {
+.scenarios {
+  margin-top: 10px;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
 }
+
 
 .alert-log {
   display: flex;
