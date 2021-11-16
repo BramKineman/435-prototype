@@ -18,6 +18,7 @@ const car = {
   x: 20,
   y: 200,
   speed: 1,
+  limitX: 100, // pixel x location to stop the vehicle 
 };
 
 const pedestrian = {
@@ -26,7 +27,7 @@ const pedestrian = {
   x: 800,
   y: 300, 
   speed: 0,
-  limit: 100 // pixel height of where pedestrian stops
+  limitY: 100 // pixel height of where pedestrian stops
 };
 
 function drawRoad() {
@@ -69,7 +70,7 @@ function displayFastPedestrian() {
 
 function scenarioOne() {
   drawPedestrian();
-  pedestrian.speed = 0.05;
+  pedestrian.speed = 0.1;
   pedestrian.limit = 100; 
   car.speed = 1;
 
@@ -112,9 +113,14 @@ function start() {
     drawCar();
     drawPedestrian();
 
-    // stop the pedestrian TODO Issue with this, pedestrian just isn't moving?
-    if (pedestrian.y < pedestrian.limit) {
+    // stop the pedestrian 
+    if (pedestrian.y < pedestrian.limitY) {
       pedestrian.speed = 0;
+    }
+
+     // stop the car 
+     if (car.x > car.limitX) {
+      car.speed = 0;
     }
 
     // change car position
