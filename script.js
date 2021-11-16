@@ -17,16 +17,17 @@ const car = {
   h: 50,
   x: 20,
   y: 200,
-  speed: 1,
-  limitX: 600, // pixel x location to stop the vehicle 
+  speed: 1.8, 
+  limitX: 800, // pixel x location to stop the vehicle 
+  brakeX: 600, // pixel x location to start braking
 };
 
 const pedestrian = {
-  w: 50,
-  h: 50,
+  w: 30,
+  h: 30,
   x: 800,
   y: 300, 
-  speed: 0,
+  speed: 0.21,
   limitY: 100 // pixel height of where pedestrian stops
 };
 
@@ -47,42 +48,46 @@ function drawPedestrian() {
 // pedestrian ends in path of car
 function scenarioOne() {
   drawPedestrian();
-  pedestrian.speed = 0.1;
-  pedestrian.limit = 200; 
-  car.speed = 1;
+  drawCar();
+  pedestrian.limitY = 210; 
 }
 
 // pedestrian ends 2 meters before path of car
 function scenarioTwo() {
-  car.speed = 1;
+  drawPedestrian();
+  drawCar();
+  pedestrian.limitY = 250; 
 }
 
 // pedestrian ends 3 meters before path of car
 function scenarioThree() {
-  car.speed = 1;
+  drawPedestrian();
+  drawCar();
+  pedestrian.limitY = 270; 
+  // don't brake
+  car.limitX = 2000;
+  car.brakeX = 2000; 
 }
 
 // pedestrian ends 5 meters before path of car
 function scenarioFour() {
-  car.speed = 1;
+  drawPedestrian();
+  drawCar();
+  pedestrian.limitY = 290; 
 }
+
 function scenarioFive() {
-  car.speed = 1;
+
 }
 function scenarioSix() {
-  car.speed = 1;
 }
 function scenarioSeven() {
-  car.speed = 1;
 }
 function scenarioEight() {
-  car.speed = 1;
 }
 function scenarioNine() {
-  car.speed = 1;
 }
 function scenarioTen() {
-  car.speed = 1;
 }
 
 function start() {
@@ -102,6 +107,14 @@ function start() {
      // stop the car 
      if (car.x > car.limitX) {
       car.speed = 0;
+    }
+
+    // start breaking the car
+    if (car.x > car.brakeX && car.speed > 0) {
+      car.speed -= 0.02;
+      var BBWStatus = document.getElementById('Brake-by-Wire');
+      BBWStatus.textContent = 'Active';
+      BBWStatus.style.color = 'green';
     }
 
     // change car position
