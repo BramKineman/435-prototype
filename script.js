@@ -44,30 +44,6 @@ function drawPedestrian() {
   ctx.drawImage(staticPedestrianImage, pedestrian.x, pedestrian.y, pedestrian.w, pedestrian.h);
 }
 
-
-function displayFastCar() {
-  drawCar();
-  car.speed = 2;
-}
-
-function displaySlowCar() {
-  drawCar();
-  car.speed = 1;
-} 
-function displayStaticPedestrian() {
-  drawPedestrian();
-}
-
-function displaySlowPedestrian() {
-  drawPedestrian();
-  pedestrian.speed = 0.05;
-}
-
-function displayFastPedestrian() {
-  drawPedestrian();
-  pedestrian.speed = 0.2;
-}
-
 function scenarioOne() {
   drawPedestrian();
   pedestrian.speed = 0.1;
@@ -77,31 +53,31 @@ function scenarioOne() {
 }
 
 function scenarioTwo() {
-
+  car.speed = 1;
 }
 function scenarioThree() {
-
+  car.speed = 1;
 }
 function scenarioFour() {
-
+  car.speed = 1;
 }
 function scenarioFive() {
-
+  car.speed = 1;
 }
 function scenarioSix() {
-
+  car.speed = 1;
 }
 function scenarioSeven() {
-
+  car.speed = 1;
 }
 function scenarioEight() {
-
+  car.speed = 1;
 }
 function scenarioNine() {
-
+  car.speed = 1;
 }
 function scenarioTen() {
-
+  car.speed = 1;
 }
 
 function start() {
