@@ -14,6 +14,7 @@ const car = {
   speed: 1.8, 
   limitX: 800, // pixel x location to stop the vehicle 
   brakeX: 600, // pixel x location to start braking
+  braking: false,
 };
 
 const pedestrian = {
@@ -111,6 +112,7 @@ function start() {
     if (car.x > car.brakeX && car.speed > 0) {
       // Brake car
       car.speed -= 0.02;
+      car.braking = true;
 
 
       // BBW Active
@@ -124,17 +126,17 @@ function start() {
       HUDStatus.style.color = 'green';
 
       // Alert Log
-      // var AlertStatus = document.getElementById('Alerts');
-      // var txt = AlertStatus.createTextNode = 'Pedestrian Detected, Brakes Applied';
-      // AlertStatus.style.color = 'Green';
-      // AlertStatus.appendChild(txt);
+      var AlertStatus = document.getElementById('Alerts');
+      var status = document.getElementById('Alerts');
+      status.textContent = 'Pedestrian Detected, Brakes Applied'; 
+      status.style.color = 'Teal';
     }
 
     // Alert log 
-    if (pedestrian.x - 500 < car.x) {
+    if (pedestrian.x - 500 < car.x && car.braking == false) {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected'; 
-      status.style.color = 'Green';
+      status.style.color = 'Teal';
     }
 
     // change car position
