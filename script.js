@@ -18,7 +18,7 @@ const car = {
   x: 20,
   y: 200,
   speed: 1,
-  limitX: 100, // pixel x location to stop the vehicle 
+  limitX: 600, // pixel x location to stop the vehicle 
 };
 
 const pedestrian = {
@@ -44,20 +44,25 @@ function drawPedestrian() {
   ctx.drawImage(staticPedestrianImage, pedestrian.x, pedestrian.y, pedestrian.w, pedestrian.h);
 }
 
+// pedestrian ends in path of car
 function scenarioOne() {
   drawPedestrian();
   pedestrian.speed = 0.1;
-  pedestrian.limit = 100; 
+  pedestrian.limit = 200; 
   car.speed = 1;
-
 }
 
+// pedestrian ends 2 meters before path of car
 function scenarioTwo() {
   car.speed = 1;
 }
+
+// pedestrian ends 3 meters before path of car
 function scenarioThree() {
   car.speed = 1;
 }
+
+// pedestrian ends 5 meters before path of car
 function scenarioFour() {
   car.speed = 1;
 }
