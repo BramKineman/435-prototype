@@ -1,14 +1,8 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-
-
-// Car Animation 
-
 const carImage = document.getElementById('car-source');
 const staticPedestrianImage = document.getElementById('pedestrian-source');
-
-
 
 drawRoad();
 
@@ -28,7 +22,8 @@ const pedestrian = {
   x: 800,
   y: 300, 
   speed: 0.21,
-  limitY: 100 // pixel height of where pedestrian stops
+  limitY: 100, // pixel height of where pedestrian stops
+  delay: 0 // delay in seconds before pedestrian starts. I am calculating this based on the location of the car. ie. Car takes 3 seconds to travel 780 pixels, so if delay is 1.5 seconds, set delay to 390 pixels --> if(car.x > delay) { pedestrian moves}
 };
 
 function drawRoad() {
@@ -76,9 +71,13 @@ function scenarioFour() {
   pedestrian.limitY = 290; 
 }
 
+// Pedestrian is static for 1.5sec then moving
 function scenarioFive() {
-
+  drawPedestrian();
+  drawCar();
+  pedestrian.delay = 390;
 }
+
 function scenarioSix() {
 }
 function scenarioSeven() {
@@ -94,7 +93,6 @@ function start() {
   function update() {
     // redraw for animation
     ctx.clearRect(0,0,canvas.width, canvas.height);
-
     drawRoad();
     drawCar();
     drawPedestrian();
@@ -105,23 +103,47 @@ function start() {
     }
 
      // stop the car 
-     if (car.x > car.limitX) {
+    if (car.x > car.limitX) {
       car.speed = 0;
     }
 
-    // start breaking the car
+    // start braking
     if (car.x > car.brakeX && car.speed > 0) {
+      // Brake car
       car.speed -= 0.02;
+
+
+      // BBW Active
       var BBWStatus = document.getElementById('Brake-by-Wire');
       BBWStatus.textContent = 'Active';
       BBWStatus.style.color = 'green';
+
+      // HUD Active
+      var HUDStatus = document.getElementById('HUD');
+      HUDStatus.textContent = 'Active';
+      HUDStatus.style.color = 'green';
+
+      // Alert Log
+      // var AlertStatus = document.getElementById('Alerts');
+      // var txt = AlertStatus.createTextNode = 'Pedestrian Detected, Brakes Applied';
+      // AlertStatus.style.color = 'Green';
+      // AlertStatus.appendChild(txt);
+    }
+
+    // Alert log 
+    if (pedestrian.x - 500 < car.x) {
+      var status = document.getElementById('Alerts');
+      status.textContent = 'Pedestrian Detected'; 
+      status.style.color = 'Green';
     }
 
     // change car position
     car.x += car.speed;
-    pedestrian.y -= pedestrian.speed;
-
     
+    if (car.x > pedestrian.delay) {
+      pedestrian.y -= pedestrian.speed;
+    }
+  
     requestAnimationFrame(update);
   }
 
