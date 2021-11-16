@@ -71,6 +71,7 @@ function scenarioOne() {
   drawPedestrian();
   pedestrian.speed = 0.05;
   pedestrian.limit = 100; 
+  car.speed = 1;
 
 }
 
@@ -112,7 +113,7 @@ function start() {
     drawPedestrian();
 
     // stop the pedestrian TODO Issue with this, pedestrian just isn't moving?
-    if (pedestrian.y < limit) {
+    if (pedestrian.y < pedestrian.limit) {
       pedestrian.speed = 0;
     }
 
