@@ -170,7 +170,7 @@ function start() {
     } else if (pedestrian.y < 200) {
       car.limitX = 2000;
       car.brakeX = 2000; 
-      if (car.speed < 1) {
+      if (car.speed < 1.8) {
         car.speed += 0.02;
       }
       car.braking = false;
@@ -183,12 +183,12 @@ function start() {
       // BBW Active
       var BBWStatus = document.getElementById('Brake-by-Wire');
       BBWStatus.textContent = 'Inactive';
-      BBWStatus.style.color = 'green';
+      BBWStatus.style.color = 'red';
 
       // HUD Active
       var HUDStatus = document.getElementById('HUD');
       HUDStatus.textContent = 'Inactive';
-      HUDStatus.style.color = 'green';
+      HUDStatus.style.color = 'red';
     }
 
     // change car position
