@@ -1,7 +1,7 @@
 # 435-prototype
 
 Instructions:
-Add a vehicle of your preferred speed (slow or fast) along with a pedestrian (static, slow, or fast) and click Start Simulation to see how the subsystems interact with the input. To create a different scenario, click Restart and make new selections for your vehicle and pedestrian before clicking Start Simulation again.
+Pick the scenario you want to run, 1-10. Click Start Simulation. Click Restart before starting another simulation.
 
 Run the prototype here: https://distracted-benz-5b1790.netlify.app/
 
