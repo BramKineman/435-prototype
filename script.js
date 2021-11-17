@@ -163,11 +163,11 @@ function start() {
       status.style.color = 'Teal';
     }
 
-    if (car.speed <= 0 && pedestrian.y < 200) {
+    if (pedestrian.y < 200) {
+      car.limitX = 2000;
+      car.brakeX = 2000; 
       if (car.speed < 1) {
         car.speed += 0.02;
-        car.limitX = 2000;
-        car.brakeX = 2000; 
       }
       car.braking = false;
 
