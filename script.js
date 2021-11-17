@@ -137,6 +137,12 @@ function start() {
       car.speed = 0;
     }
 
+    if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y > 200) {
+      var status = document.getElementById('Alerts');
+      status.textContent = 'Pedestrian Detected'; 
+      status.style.color = 'Teal';
+    }
+
     // start braking
     if (car.x > car.brakeX && car.speed > 0) {
       // Brake car
@@ -161,7 +167,7 @@ function start() {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected, Brakes Applied'; 
       status.style.color = 'Teal';
-    } else if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y < 200) {
+    } else if (pedestrian.y < 200) {
       car.limitX = 2000;
       car.brakeX = 2000; 
       if (car.speed < 1) {
@@ -172,11 +178,6 @@ function start() {
       var AlertStatus = document.getElementById('Alerts');
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Cleared, Accelrating'; 
-      status.style.color = 'Teal';
-    }
-     else if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y > 200) {
-      var status = document.getElementById('Alerts');
-      status.textContent = 'Pedestrian Detected'; 
       status.style.color = 'Teal';
     }
 
