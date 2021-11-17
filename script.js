@@ -170,6 +170,11 @@ function start() {
         car.brakeX = 2000; 
       }
       car.braking = false;
+
+      var AlertStatus = document.getElementById('Alerts');
+      var status = document.getElementById('Alerts');
+      status.textContent = 'Pedestrian Cleared, Accelrating'; 
+      status.style.color = 'Teal';
     }
 
     // Alert log 
