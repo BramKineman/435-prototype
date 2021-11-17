@@ -17,7 +17,7 @@ const car = {
   braking: false,
 };
 
-const pedestrian = {
+pedestrian = {
   w: 30,
   h: 30,
   x: 800,
