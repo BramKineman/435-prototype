@@ -161,9 +161,7 @@ function start() {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected, Brakes Applied'; 
       status.style.color = 'Teal';
-    }
-
-    if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y < 200) {
+    } else if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y < 200) {
       car.limitX = 2000;
       car.brakeX = 2000; 
       if (car.speed < 1) {
@@ -176,9 +174,7 @@ function start() {
       status.textContent = 'Pedestrian Cleared, Accelrating'; 
       status.style.color = 'Teal';
     }
-
-    // Alert log 
-    if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y > 200) {
+     else if (pedestrian.x - 500 < car.x && car.braking == false && pedestrian.y > 200) {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected'; 
       status.style.color = 'Teal';
