@@ -167,7 +167,7 @@ function start() {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected, Brakes Applied'; 
       status.style.color = 'Teal';
-    } else if (pedestrian.y < 200) {
+    } else if (pedestrian.y < 195) {
       car.limitX = 2000;
       car.brakeX = 2000; 
       if (car.speed < 1.8) {
