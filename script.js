@@ -95,11 +95,25 @@ function scenarioSeven() {
   pedestrian.delay = 286;
 }
 
+// Pedetsiran is in the path of the car and static
 function scenarioEight() {
+  pedestrian.y = 210;
+  drawPedestrian();
+  drawCar();
 }
+
+// Pedestrian is 2 meters before the path of the car and static
 function scenarioNine() {
+  pedestrian.y = 250;
+  drawPedestrian();
+  drawCar();
 }
+
+// Pedestrian is 4 meters before the path of the car and static
 function scenarioTen() {
+  pedestrian.y = 290;
+  drawPedestrian();
+  drawCar();
 }
 
 function start() {
@@ -142,6 +156,13 @@ function start() {
       var status = document.getElementById('Alerts');
       status.textContent = 'Pedestrian Detected, Brakes Applied'; 
       status.style.color = 'Teal';
+    }
+
+    if (car.speed == 0 && pedestrian.y < 200) {
+      if (car.speed < 1) {
+        car.speed += 0.02;
+      }
+      car.braking = false;
     }
 
     // Alert log 
