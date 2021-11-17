@@ -97,6 +97,7 @@ function scenarioSeven() {
 
 // Pedetsiran is in the path of the car and static
 function scenarioEight() {
+  pedestrian.speed = 0;
   pedestrian.y = 210;
   drawPedestrian();
   drawCar();
@@ -104,6 +105,7 @@ function scenarioEight() {
 
 // Pedestrian is 2 meters before the path of the car and static
 function scenarioNine() {
+  pedestrian.speed = 0;
   pedestrian.y = 250;
   drawPedestrian();
   drawCar();
@@ -111,6 +113,7 @@ function scenarioNine() {
 
 // Pedestrian is 4 meters before the path of the car and static
 function scenarioTen() {
+  pedestrian.speed = 0;
   pedestrian.y = 290;
   drawPedestrian();
   drawCar();
