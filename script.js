@@ -79,8 +79,15 @@ function scenarioFive() {
   pedestrian.delay = 390;
 }
 
+// Pedestrian is static for 1.8sec then moving
 function scenarioSix() {
+  pedestrian.x = 250;
+  drawPedestrian();
+  drawCar();
+  pedestrian.delay = 390;
 }
+
+// Pedestrian is static for 1.1sec then moving
 function scenarioSeven() {
 }
 function scenarioEight() {
