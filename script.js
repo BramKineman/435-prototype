@@ -79,17 +79,22 @@ function scenarioFive() {
   pedestrian.delay = 390;
 }
 
-// Pedestrian is static for 1.8sec then moving
+// Pedestrian starts at 2 meters away and is static for 1.8sec then moving
 function scenarioSix() {
-  pedestrian.x = 250;
+  pedestrian.Y = 250;
   drawPedestrian();
   drawCar();
-  pedestrian.delay = 390;
+  pedestrian.delay = 468;
 }
 
 // Pedestrian is static for 1.1sec then moving
 function scenarioSeven() {
+  pedestrian.Y = 290;
+  drawPedestrian();
+  drawCar();
+  pedestrian.delay = 286;
 }
+
 function scenarioEight() {
 }
 function scenarioNine() {
