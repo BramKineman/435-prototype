@@ -140,7 +140,9 @@ function start() {
     // start braking
     if (car.x > car.brakeX && car.speed > 0) {
       // Brake car
-      car.speed -= 0.02;
+      if (car.speed > 0) {
+        car.speed -= 0.02;
+      }
       car.braking = true;
 
 
