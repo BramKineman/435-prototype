@@ -177,8 +177,18 @@ function start() {
 
       var AlertStatus = document.getElementById('Alerts');
       var status = document.getElementById('Alerts');
-      status.textContent = 'Pedestrian Cleared, Accelrating'; 
+      status.textContent = 'Pedestrian Cleared, Returning to Steady Speed'; 
       status.style.color = 'Teal';
+
+      // BBW Active
+      var BBWStatus = document.getElementById('Brake-by-Wire');
+      BBWStatus.textContent = 'Inactive';
+      BBWStatus.style.color = 'green';
+
+      // HUD Active
+      var HUDStatus = document.getElementById('HUD');
+      HUDStatus.textContent = 'Inactive';
+      HUDStatus.style.color = 'green';
     }
 
     // change car position
