@@ -29,8 +29,7 @@ pedestrian = {
 
 function drawRoad() {
   ctx.fillstyle = 'black';
-  ctx.fillRect(0, canvas.height/2 -100, canvas.width, 200);
-
+  ctx.fillRect(0, canvas.height/2 -100, canvas.width, 200);  
 }
 
 function drawCar() {
@@ -74,6 +73,7 @@ function scenarioFour() {
 
 // Pedestrian is static for 1.5sec then moving
 function scenarioFive() {
+  pedestrian.y = 200;
   drawPedestrian();
   drawCar();
   pedestrian.delay = 390;
