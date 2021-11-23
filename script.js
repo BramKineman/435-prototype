@@ -173,9 +173,9 @@ function start() {
       var BBWStatus = document.getElementById('Brake-by-Wire');
       BBWStatus.textContent = 'Active';
       BBWStatus.style.color = 'green';
-      // var CruiseStatus = document.getElementById('Cruise-Control');
-      // CruiseStatus.textContent = 'Paused';
-      // CruiseStatus.style.color = 'yellow';
+      var CruiseStatus = document.getElementById('Cruise-Control');
+      CruiseStatus.textContent = 'Paused';
+      CruiseStatus.style.color = 'yellow';
 
 
       // HUD Active
@@ -201,10 +201,13 @@ function start() {
       status.textContent = 'Pedestrian Cleared, Returning to Steady Speed'; 
       status.style.color = 'Teal';
 
-      // BBW Active
+      // BBW Inactive, Cruise Active
       var BBWStatus = document.getElementById('Brake-by-Wire');
       BBWStatus.textContent = 'Inactive';
       BBWStatus.style.color = 'red';
+      var CruiseStatus = document.getElementById('Cruise-Control');
+      CruiseStatus.textContent = 'Active';
+      CruiseStatus.style.color = 'green';
 
       // HUD Active
       var HUDStatus = document.getElementById('HUD');
