@@ -83,6 +83,9 @@ function scenarioFour() {
   drawPedestrian();
   drawCar();
   pedestrian.limitY = 290; 
+    // don't brake
+    car.limitX = 2000;
+    car.brakeX = 2000; 
 }
 
 // Pedestrian is static for 1.5sec then moving
