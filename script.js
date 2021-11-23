@@ -28,8 +28,22 @@ pedestrian = {
 };
 
 function drawRoad() {
-  ctx.fillstyle = 'black';
-  ctx.fillRect(0, canvas.height/2 -100, canvas.width, 200);  
+  // road
+  ctx.fillStyle = "#424949";
+  ctx.fillRect(0, canvas.height/2 -120, canvas.width, 200);
+  //lines
+  ctx.fillStyle = "#e6ec22"
+  ctx.fillRect(20, 180, 80, 8)
+  ctx.fillRect(200, 180, 80, 8)
+  ctx.fillRect(380, 180, 80, 8)
+  ctx.fillRect(560, 180, 80, 8)
+  ctx.fillRect(740, 180, 80, 8)
+  ctx.fillRect(920, 180, 80, 8)
+  ctx.fillRect(1100, 180, 80, 8)
+  //sidewalk 
+  ctx.fillStyle = "#717d7e";
+  ctx.fillRect(0, canvas.height/2 + 80, canvas.width, 120);
+  ctx.fillRect(0, 0, canvas.width, 90);
 }
 
 function drawCar() {
@@ -152,10 +166,14 @@ function start() {
       car.braking = true;
 
 
-      // BBW Active
+      // BBW Active, Cruise Paused
       var BBWStatus = document.getElementById('Brake-by-Wire');
       BBWStatus.textContent = 'Active';
       BBWStatus.style.color = 'green';
+      // var CruiseStatus = document.getElementById('Cruise-Control');
+      // CruiseStatus.textContent = 'Paused';
+      // CruiseStatus.style.color = 'yellow';
+
 
       // HUD Active
       var HUDStatus = document.getElementById('HUD');
@@ -165,7 +183,7 @@ function start() {
       // Alert Log
       var AlertStatus = document.getElementById('Alerts');
       var status = document.getElementById('Alerts');
-      status.textContent = 'Pedestrian Detected, Brakes Applied'; 
+      status.textContent = 'Pedestrian Detected, Driver Alerted, Brakes Applied'; 
       status.style.color = 'Teal';
     } else if (pedestrian.y < 195) {
       car.limitX = 2000;
