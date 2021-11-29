@@ -132,6 +132,8 @@ function scenarioNine() {
 function scenarioTen() {
   pedestrian.speed = 0;
   pedestrian.y = 290;
+  car.limitX = 8000;
+  car.brakeX = 8000;
   drawPedestrian();
   drawCar();
 }
